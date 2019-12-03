@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioCondominio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3509fc21-2e71-4e31-86fc-5d41c5c1d2eb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DadosCondominos"/>
+	<style name="Zebra">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT} % 2 == 0)]]></conditionExpression>
+			<style backcolor="#ADACAC"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[endereco]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[cep]]></fieldDescription>
+	</field>
+	<field name="ucs" class="java.util.List">
+		<fieldDescription><![CDATA[ucs]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="85" backcolor="#000000" uuid="6409125b-9ea9-4c02-975d-445149c59d2f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" forecolor="#FFFFFF" uuid="5bf0b47b-bc02-4701-ba58-1c489cc318f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Condomínios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement style="Zebra" x="0" y="0" width="555" height="60" uuid="a9e0cad1-6af7-48e0-b902-07e80c6647c4"/>
+			</rectangle>
+			<textField>
+				<reportElement x="90" y="0" width="280" height="30" uuid="7a676a78-f148-459a-a95b-db0b7583c650"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="80" height="30" uuid="df9f6143-adba-49ac-bdc3-a5cb3f49e269"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="30" width="280" height="30" uuid="76484eec-d9c5-476f-b41e-f30827cdd0e3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="30" width="80" height="30" uuid="73399ac3-1d6f-4622-83be-a43faad0b108"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="440" y="0" width="115" height="30" uuid="bef2d472-15bd-438e-bc93-8d4a758feb10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="0" width="70" height="30" uuid="980117a9-1bf6-4be9-8eec-e3befd65d9cd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="30" width="125" height="30" uuid="72c6eb50-ef2f-4b7f-9234-b37de981bad9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cep}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="30" width="60" height="30" uuid="a978ddb8-1974-46f2-a0c2-6597fd291844"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="60" width="555" height="40" uuid="371bcb5f-6887-49bb-ba49-41c9c7421b41"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(
+	(java.util.List<br.edu.ifsul.modelo.UnidadeCondominial>)$F{ucs}
+)]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subUnidadeCond.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="20" y="12" width="180" height="30" uuid="62cd2e1d-c108-4974-9d47-dfea9535accf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="12" width="100" height="30" uuid="f65e738c-d46f-4e84-b064-459a6b61be98"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="450" y="12" width="100" height="30" uuid="e443f744-ed91-4fe1-a99c-554dd3bb4274"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

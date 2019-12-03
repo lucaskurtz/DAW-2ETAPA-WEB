@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subUnidadeCond" pageWidth="550" pageHeight="842" columnWidth="550" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isSummaryNewPage="true" uuid="f1a11510-30ea-4948-b02a-30d3c568c725">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="area" class="java.lang.Double">
+		<fieldDescription><![CDATA[area]]></fieldDescription>
+	</field>
+	<field name="pessoa" class="br.edu.ifsul.modelo.Pessoa">
+		<fieldDescription><![CDATA[pessoa]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="numeroQuarto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numeroQuarto]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[descricao]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="30" backcolor="#000000" uuid="35bb52fa-e989-4b0e-8647-79c241c45759"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" forecolor="#FFFFFF" uuid="7d86d03c-0c16-445e-ac69-f4e845f3c641"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidades Condominiais]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="90" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="90" uuid="d4f43f75-b9e4-4d35-a640-1261f78d5b5c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="100" y="0" width="455" height="30" uuid="a43e523b-86d3-4ba6-a621-ffe179ce6845"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="90" height="30" uuid="2515fb5e-5fea-448a-b3ab-7e018c493d78"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="60" width="100" height="30" uuid="1abd878d-91ab-4d9a-9fa7-80d73407ffab"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="60" width="80" height="30" uuid="31173740-0c61-485b-abaf-6f45dab3cc6b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Área:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="60" width="80" height="30" uuid="0aa5e132-13a2-4bd5-a1d9-7b8c61bf30c7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="60" width="80" height="30" uuid="1ed5f45c-319f-4e47-860c-6e2140db226e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="475" y="60" width="80" height="30" uuid="764b71f1-271c-4f3c-89bc-82cd6e7ad053"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroQuarto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="60" width="125" height="30" uuid="6bff4f98-348b-4fa8-b266-063a335642c0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número do Quarto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="30" width="455" height="30" uuid="c6f52d85-b3b9-498b-a06b-f162cbb84069"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pessoa}.getNome()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="30" width="90" height="30" uuid="4a49520f-fa42-437c-8343-ffd3a65245e8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proprietário:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
